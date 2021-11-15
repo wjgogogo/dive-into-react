@@ -6,7 +6,3 @@ hero:
     - text: 开始学习
       link: /core/01-criterion
 ---  
-
-要点：
-
-* [ ] jsx 是什么？
