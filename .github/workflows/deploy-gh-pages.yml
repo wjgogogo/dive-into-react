@@ -2,31 +2,31 @@ name: 🚀 Deploy to github pages
 
 on:
   push:
-    branches: 
+    branches:
       - master
-      
+
 jobs:
   deploy:
-    name: Deploy 
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 
+      - name: Checkout
         uses: actions/checkout@v2
         with:
          fetch-depth: 0
-      
+
       - name: Setup Node
         uses: actions/setup-node@v2.4.1
         with:
-          version: 16.x
+          node-version: 16.x
           cache: yarn
-      
+
       - name: Install Dependencies
         run: yarn --frozen-lockfile
-      
+
       - name: Build
         run: yarn build
-        
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -34,4 +34,4 @@ jobs:
           public_dir: ./dist
           force_orphan: true
           commit_message: ${{github.event.head_commit.message}}
-      
+
