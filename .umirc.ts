@@ -5,6 +5,7 @@ export default defineConfig({
   mode: 'site',
   title: '读懂 React',
   logo: '/avatar.jpg',
+  favicon: '/avatar.jpg',
   locales: [['zh-CN', '中文']],
   navs: [
     null,
